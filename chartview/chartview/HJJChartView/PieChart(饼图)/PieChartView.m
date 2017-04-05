@@ -25,7 +25,6 @@
         _proportionArray = [NSMutableArray array];
         [self.layer addSublayer:_baseLayer];
     }
-    
     return self;
     
 }

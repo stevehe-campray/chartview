@@ -17,6 +17,7 @@
 		747BCB371E8CAE1F00A80208 /* chartviewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BCB361E8CAE1F00A80208 /* chartviewUITests.m */; };
 		747BCB481E8D037700A80208 /* UnitBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BCB471E8D037700A80208 /* UnitBar.m */; };
 		747BCB4B1E8D0B0C00A80208 /* HistogramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BCB4A1E8D0B0C00A80208 /* HistogramView.m */; };
+		7498BD131E948DEE008612B5 /* HJJChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7498BD121E948DEE008612B5 /* HJJChartView.m */; };
 		74E318041E8E28AF00E165E9 /* HJJStyleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E318031E8E28AF00E165E9 /* HJJStyleLabel.m */; };
 		74E3180A1E8E2B3B00E165E9 /* HJJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E318091E8E2B3B00E165E9 /* HJJConst.m */; };
 		74E3180F1E8E547300E165E9 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E3180E1E8E547300E165E9 /* PieChartView.m */; };
@@ -62,6 +63,8 @@
 		747BCB471E8D037700A80208 /* UnitBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitBar.m; sourceTree = "<group>"; };
 		747BCB491E8D0B0C00A80208 /* HistogramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistogramView.h; sourceTree = "<group>"; };
 		747BCB4A1E8D0B0C00A80208 /* HistogramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistogramView.m; sourceTree = "<group>"; };
+		7498BD111E948DEE008612B5 /* HJJChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJJChartView.h; sourceTree = "<group>"; };
+		7498BD121E948DEE008612B5 /* HJJChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJJChartView.m; sourceTree = "<group>"; };
 		74E318021E8E28AF00E165E9 /* HJJStyleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJJStyleLabel.h; sourceTree = "<group>"; };
 		74E318031E8E28AF00E165E9 /* HJJStyleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJJStyleLabel.m; sourceTree = "<group>"; };
 		74E318081E8E2B3B00E165E9 /* HJJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJJConst.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				74E318131E8E796F00E165E9 /* BrokenLine(折线图) */,
 				74E3180C1E8E542200E165E9 /* PieChart(饼图) */,
 				747BCB451E8D032200A80208 /* Histogram(柱状图) */,
+				7498BD111E948DEE008612B5 /* HJJChartView.h */,
+				7498BD121E948DEE008612B5 /* HJJChartView.m */,
 			);
 			path = HJJChartView;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				747BCB191E8CAE1E00A80208 /* ViewController.m in Sources */,
+				7498BD131E948DEE008612B5 /* HJJChartView.m in Sources */,
 				74E3180A1E8E2B3B00E165E9 /* HJJConst.m in Sources */,
 				74E318041E8E28AF00E165E9 /* HJJStyleLabel.m in Sources */,
 				74E318121E8E565D00E165E9 /* HJJPieLayer.m in Sources */,

@@ -27,8 +27,11 @@
         self.clipsToBounds = YES;
         _barscollview = [[UIScrollView alloc] initWithFrame:CGRectMake(HJJYLabelwidth, 0, frame.size.width - HJJYLabelwidth, frame.size.height)];
         _barscollview.showsHorizontalScrollIndicator = NO;
+        
         _xwidth = _barscollview.frame.size.width/10;
         _borderwidth = 2;
+        _ishiddenPoint = NO;
+        _ishiddenLabel = NO;
         [self addSubview:_barscollview];
     }
     return self;
@@ -107,8 +110,8 @@
         brokenlinelayer.lineJoin = kCALineJoinBevel;
         brokenlinelayer.fillColor = [UIColor whiteColor].CGColor;
         brokenlinelayer.borderWidth = _borderwidth;
-        brokenlinelayer.strokeEnd = 0;
-        [self.layer addSublayer:brokenlinelayer];
+        brokenlinelayer.strokeEnd = 1;
+        [_barscollview.layer addSublayer:brokenlinelayer];
         
         
         //图层路径
@@ -117,21 +120,102 @@
         
         CGFloat firstpointvalue = [[chlidarray objectAtIndex:0] floatValue];
         
-        CGFloat pointcenterX = HJJYLabelwidth + _xwidth/2;
+        //画图的高度
+        CGFloat chartCavanHeight = self.frame.size.height - HJJLabelHeight * 3;
         
-//        self addPoint:<#(CGPoint)#> index:<#(NSInteger)#> isShow:<#(BOOL)#> value:<#(CGFloat)#>
+        float proportion = ((float)firstpointvalue-_yValueMin) / ((float)_yValueMax-_yValueMin);
+        
+        CGFloat pointcenterX =_xwidth/2;
+        
+        CGFloat pointcenterY = chartCavanHeight - proportion * chartCavanHeight + HJJLabelHeight;
         
         
+        CGPoint point =  CGPointMake(pointcenterX, pointcenterY);
+        //添加点
+        [self addPoint:point index:i isShow:NO value:firstpointvalue];
         
+        
+        //设置起点以及路径属性
+        [path moveToPoint:point];
+         path.lineWidth = 2;
+        [path setLineCapStyle:kCGLineCapRound];
+        [path setLineJoinStyle:kCGLineJoinRound];
+        
+        for (int j = 1; j < chlidarray.count; j++) {
+            
+            CGFloat pointvalue = [[chlidarray objectAtIndex:j] floatValue];
+            
+            //画图的高度
+            CGFloat chartCavanHeight = self.frame.size.height - HJJLabelHeight * 3;
+            
+            float proportion = ((float)pointvalue-_yValueMin) / ((float)_yValueMax-_yValueMin);
+            
+            CGFloat pointcenterX =_xwidth/2 + j * _xwidth;
+            
+            CGFloat pointcenterY = chartCavanHeight - proportion * chartCavanHeight + HJJLabelHeight;
+            
+            
+            CGPoint point =  CGPointMake(pointcenterX, pointcenterY);
+            
+            [path addLineToPoint:point];
+            
+            [self addPoint:point index:i isShow:NO value:pointvalue];
+            
+            [path moveToPoint:point];
+            
+            
+        }
+        
+        
+        brokenlinelayer.path = path.CGPath;
+        if ([[_colors objectAtIndex:i] CGColor]) {
+            brokenlinelayer.strokeColor = [[_colors objectAtIndex:i] CGColor];
+        }else{
+            brokenlinelayer.strokeColor = [UIColor greenColor].CGColor;
+        }
         
     }
     
     
 }
-//创建数据点 与记录数据点的值
+
+
+
+/**
+ *  创建数据点 与记录数据点的值
+ *
+ *  @param point    创建点的中心点
+ *  @param index    第几个点
+ *  @param isHollow 是否隐藏
+ *  @param value    y值
+ */
 - (void)addPoint:(CGPoint)point index:(NSInteger)index isShow:(BOOL)isHollow value:(CGFloat)value{
     
+    UIView *pointview = [[UIView alloc] initWithFrame:CGRectMake(5, 5, 8, 8)];
+    pointview.center = point;
+    pointview.layer.cornerRadius = 4.f;
+    pointview.layer.borderWidth = 2.f;
+    pointview.layer.masksToBounds = YES;
+    pointview.layer.borderColor = [[_colors objectAtIndex:index] CGColor]?[[_colors objectAtIndex:index] CGColor]:[UIColor greenColor].CGColor;
     
+    
+    if (isHollow) {
+        pointview.backgroundColor = [UIColor whiteColor];
+    }else{
+        pointview.backgroundColor = [_colors objectAtIndex:index]?[_colors objectAtIndex:index]:[UIColor greenColor];
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(point.x-HJJTagLabelwidth/2.0, point.y-HJJLabelHeight*2, HJJTagLabelwidth, HJJLabelHeight)];
+        label.font = [UIFont systemFontOfSize:10];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = pointview.backgroundColor;
+        label.text = [NSString stringWithFormat:@"%.1f",value];
+        label.hidden = !_ishiddenLabel;
+        [_barscollview addSubview:label];
+    }
+    [_barscollview addSubview:pointview];
+    pointview.hidden = !_ishiddenPoint;
+    
+  
     
 }
 

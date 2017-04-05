@@ -27,10 +27,13 @@
 
 //每个数据占的宽度
 @property (nonatomic, assign)CGFloat xwidth;
-
 //折线宽度
 @property (nonatomic, assign)CGFloat borderwidth;
 
+//是否隐藏点
+@property (nonatomic, assign)Boolean ishiddenPoint;
+//是否隐藏显示数值
+@property (nonatomic, assign)Boolean ishiddenLabel;
 
 -(void)startDarwing;
 

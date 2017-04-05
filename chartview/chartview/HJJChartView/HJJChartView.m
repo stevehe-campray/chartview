@@ -143,6 +143,8 @@
         //配置数据
         [_piechartview setDataarray:[self.dataSource chartConfigYValue:self]];
         [_piechartview startDrawing];
+        
+        [self.dataSource dataProportionArrayInChart:self Portionarr:_piechartview.dataProportion];
     }
     
     

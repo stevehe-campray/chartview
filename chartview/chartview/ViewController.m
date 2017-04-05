@@ -213,5 +213,11 @@
     return 10.f;
 }
 
+//饼状图占的比例
+- (void)dataProportionArrayInChart:(HJJChartView *)chartview Portionarr:(NSMutableArray *)parr{
+  
+    NSLog(@"%@",parr);
+    
+}
 
 @end

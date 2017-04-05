@@ -60,6 +60,8 @@ typedef NS_ENUM(NSInteger, HJJChartStyle){
 //饼状图宽度
 - (CGFloat)pieWitdthInChart:(HJJChartView *)chartview;
 
+//饼图各个部分占的比例
+- (void)dataProportionArrayInChart:(HJJChartView *)chartview Portionarr:(NSMutableArray *)parr;
 
 @end
 

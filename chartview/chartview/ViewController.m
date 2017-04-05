@@ -10,6 +10,10 @@
 #import "UnitBar.h"
 
 #import "HistogramView.h"
+#import "HJJChartView/PieChart(饼图)/HJJPieLayer.h"
+
+#import "PieChartView.h"
+#import "BrokenlineView.h"
 
 @interface ViewController ()
 
@@ -56,6 +60,38 @@
     
     [historamview1 strokeChart];
     [self.view addSubview:historamview1];
+    
+    
+    
+    PieChartView *pieview = [[PieChartView alloc] initWithFrame:CGRectMake(40, 400, 100, 100)];
+    
+    NSArray *colorarr1 = @[[UIColor redColor],[UIColor greenColor],[UIColor orangeColor]];
+    
+    NSArray *ary3 = @[@"76",@"34",@"54"];
+    
+    [pieview setDataarray:ary3];
+    [pieview setColors:colorarr1];
+    pieview.pieWitdth = 25;
+    [pieview startDrawing];
+    pieview.transform = CGAffineTransformRotate(pieview.transform, - M_PI / 2);
+    pieview.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:pieview];
+    
+    NSArray *parray = pieview.dataProportion;
+    
+    NSLog(@"%@",parray);
+    
+    
+    BrokenlineView *brokenline = [[BrokenlineView alloc] initWithFrame:CGRectMake(0, 530, self.view.frame.size.width, 150)];
+    
+    [brokenline setYvalueArray:@[ary1]];
+    
+    [brokenline setXnameArray:Xvalue1];
+    
+    [self.view addSubview:brokenline];
+    
+    
+    
     
     
     

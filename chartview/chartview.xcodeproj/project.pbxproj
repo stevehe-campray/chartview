@@ -19,6 +19,9 @@
 		747BCB4B1E8D0B0C00A80208 /* HistogramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BCB4A1E8D0B0C00A80208 /* HistogramView.m */; };
 		74E318041E8E28AF00E165E9 /* HJJStyleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E318031E8E28AF00E165E9 /* HJJStyleLabel.m */; };
 		74E3180A1E8E2B3B00E165E9 /* HJJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E318091E8E2B3B00E165E9 /* HJJConst.m */; };
+		74E3180F1E8E547300E165E9 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E3180E1E8E547300E165E9 /* PieChartView.m */; };
+		74E318121E8E565D00E165E9 /* HJJPieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E318111E8E565D00E165E9 /* HJJPieLayer.m */; };
+		74E318161E8E79C600E165E9 /* BrokenlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E318151E8E79C600E165E9 /* BrokenlineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,12 @@
 		74E318031E8E28AF00E165E9 /* HJJStyleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJJStyleLabel.m; sourceTree = "<group>"; };
 		74E318081E8E2B3B00E165E9 /* HJJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJJConst.h; sourceTree = "<group>"; };
 		74E318091E8E2B3B00E165E9 /* HJJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJJConst.m; sourceTree = "<group>"; };
+		74E3180D1E8E547300E165E9 /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
+		74E3180E1E8E547300E165E9 /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
+		74E318101E8E565D00E165E9 /* HJJPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJJPieLayer.h; sourceTree = "<group>"; };
+		74E318111E8E565D00E165E9 /* HJJPieLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJJPieLayer.m; sourceTree = "<group>"; };
+		74E318141E8E79C600E165E9 /* BrokenlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenlineView.h; sourceTree = "<group>"; };
+		74E318151E8E79C600E165E9 /* BrokenlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenlineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +165,8 @@
 		747BCB441E8D032200A80208 /* HJJChartView */ = {
 			isa = PBXGroup;
 			children = (
+				74E318131E8E796F00E165E9 /* BrokenLine(折线图) */,
+				74E3180C1E8E542200E165E9 /* PieChart(饼图) */,
 				747BCB451E8D032200A80208 /* Histogram(柱状图) */,
 			);
 			path = HJJChartView;
@@ -174,6 +185,27 @@
 				74E318091E8E2B3B00E165E9 /* HJJConst.m */,
 			);
 			path = "Histogram(柱状图)";
+			sourceTree = "<group>";
+		};
+		74E3180C1E8E542200E165E9 /* PieChart(饼图) */ = {
+			isa = PBXGroup;
+			children = (
+				74E3180D1E8E547300E165E9 /* PieChartView.h */,
+				74E3180E1E8E547300E165E9 /* PieChartView.m */,
+				74E318101E8E565D00E165E9 /* HJJPieLayer.h */,
+				74E318111E8E565D00E165E9 /* HJJPieLayer.m */,
+			);
+			path = "PieChart(饼图)";
+			sourceTree = "<group>";
+		};
+		74E318131E8E796F00E165E9 /* BrokenLine(折线图) */ = {
+			isa = PBXGroup;
+			children = (
+				74E318141E8E79C600E165E9 /* BrokenlineView.h */,
+				74E318151E8E79C600E165E9 /* BrokenlineView.m */,
+			);
+			name = "BrokenLine(折线图)";
+			path = BrokenLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +341,11 @@
 				747BCB191E8CAE1E00A80208 /* ViewController.m in Sources */,
 				74E3180A1E8E2B3B00E165E9 /* HJJConst.m in Sources */,
 				74E318041E8E28AF00E165E9 /* HJJStyleLabel.m in Sources */,
+				74E318121E8E565D00E165E9 /* HJJPieLayer.m in Sources */,
 				747BCB481E8D037700A80208 /* UnitBar.m in Sources */,
+				74E3180F1E8E547300E165E9 /* PieChartView.m in Sources */,
 				747BCB161E8CAE1E00A80208 /* AppDelegate.m in Sources */,
+				74E318161E8E79C600E165E9 /* BrokenlineView.m in Sources */,
 				747BCB4B1E8D0B0C00A80208 /* HistogramView.m in Sources */,
 				747BCB131E8CAE1E00A80208 /* main.m in Sources */,
 			);

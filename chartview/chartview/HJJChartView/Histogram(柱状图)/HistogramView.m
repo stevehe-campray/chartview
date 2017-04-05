@@ -29,7 +29,6 @@
         _barscollview = [[UIScrollView alloc] initWithFrame:CGRectMake(HJJYLabelwidth, 0, frame.size.width - HJJYLabelwidth, frame.size.height)];
         _unitbarWith = _barscollview.frame.size.width / 8;
         _proportion = 0.1;
-//        _barscollview.showsVerticalScrollIndicator = NO;
         _barscollview.showsHorizontalScrollIndicator = NO;
         [self addSubview:_barscollview];
     }

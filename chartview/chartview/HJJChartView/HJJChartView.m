@@ -130,6 +130,8 @@
             [self addSubview:_piechartview];
         }
         
+        
+        _piechartview.transform = CGAffineTransformRotate(_piechartview.transform, - M_PI / 2);
         //显示颜色
         if ([self.dataSource respondsToSelector:@selector(chartConfigColors:)]) {
             [_piechartview setColors:[self.dataSource chartConfigColors:self]];
